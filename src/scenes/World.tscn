@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/chars/player_paddle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/chars/BallSpawner.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/chars/Bounce_Wall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assests/separator.png" type="Texture" id=4]
+[ext_resource path="res://src/chars/ScoreWall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/scenes/World.gd" type="Script" id=6]
+
+[node name="World" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="player_paddle" parent="." instance=ExtResource( 1 )]
+position = Vector2( 33, 246 )
+
+[node name="player_paddle2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 594, 132 )
+player = "player2"
+
+[node name="BallSpawner" parent="." instance=ExtResource( 2 )]
+position = Vector2( 303, 270 )
+
+[node name="Bounce_Wall" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, 8 )
+
+[node name="Bounce_Wall2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, 472 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 320, 240 )
+texture = ExtResource( 4 )
+
+[node name="ScoreWall2" parent="." instance=ExtResource( 5 )]
+position = Vector2( -7, 285 )
+player = "player2"
+
+[node name="ScoreWall" parent="." instance=ExtResource( 5 )]
+position = Vector2( 664, 259 )

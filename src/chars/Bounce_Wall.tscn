@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="Gradient" id=2]
+
+[sub_resource type="GradientTexture2D" id=3]
+gradient = SubResource( 2 )
+fill = 1
+fill_from = Vector2( 0.322626, 0.534916 )
+fill_to = Vector2( 0.317039, 0.534916 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 320.5, 10 )
+
+[node name="Bounce_Wall" type="StaticBody2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 321, 1.5 )
+scale = Vector2( 9.98438, 0.328125 )
+texture = SubResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 319.5, 0 )
+shape = SubResource( 1 )
